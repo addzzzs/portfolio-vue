@@ -13,6 +13,10 @@ const accessKey = "fd78f368-be00-435d-a7ad-4d872915c0ca";
 const subject = "A User Sent a message from your Web Portfolio";
 
 const submitForm = async () => {
+  if (!recaptchaToken.value) {
+    notyf.error("Please complete the reCAPTCHA");
+    return;
+  }
   try {
     isLoading.value = true;
 
@@ -35,6 +39,7 @@ const submitForm = async () => {
         name: name.value,
         email: email.value,
         message: message.value,
+        "g-recaptcha-response": recaptchaToken.value,
       }),
     });
 
