@@ -199,7 +199,7 @@ onMounted(() => {
                 />
               </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-2">
               <label class="form-label-custom d-block mb-2">Message</label>
               <textarea
                 v-model="message"
@@ -208,6 +208,10 @@ onMounted(() => {
                 placeholder="Tell me about your project..."
                 required
               ></textarea>
+            </div>
+
+            <div class="d-flex justify-content-end">
+              <div ref="recaptchaContainer"></div>
             </div>
             <div
               class="form-footer d-flex align-items-center justify-content-between flex-wrap gap-3"
@@ -250,10 +254,6 @@ onMounted(() => {
                 {{ isLoading ? "Sending..." : "Send Message" }}
                 <i class="bi bi-send-fill"></i>
               </button>
-
-              <div class="d-flex justify-content-center mt-2">
-                <div ref="recaptchaContainer"></div>
-              </div>
             </div>
           </form>
         </div>
