@@ -54,8 +54,60 @@ const submitForm = async () => {
     notyf.error("Failed to send message");
   } finally {
     isLoading.value = false;
+    resetRecaptcha();
   }
 };
+
+const SITE_KEY = "6LeFB3MtAAAAAJcx26wgYKo3csbCLCseJHOfKxw4"; // Replace with your site key
+
+const recaptchaContainer = ref(null);
+const recaptchaWidgetId = ref(null);
+const recaptchaToken = ref("");
+
+// Callback called by reCAPTCHA when successful
+function onRecaptchaSuccess(token) {
+  recaptchaToken.value = token;
+}
+
+// Callback when expired
+function onRecaptchaExpired() {
+  recaptchaToken.value = "";
+}
+
+// Function to render the reCAPTCHA widget
+function renderRecaptcha() {
+  if (!window.grecaptcha) {
+    console.error("reCAPTCHA not loaded");
+    return;
+  }
+
+  recaptchaWidgetId.value = window.grecaptcha.render(recaptchaContainer.value, {
+    sitekey: SITE_KEY,
+    size: "normal", // or 'compact'
+    callback: onRecaptchaSuccess,
+    "expired-callback": onRecaptchaExpired,
+  });
+}
+
+// Function to reset reCAPTCHA
+function resetRecaptcha() {
+  if (recaptchaWidgetId.value !== null) {
+    window.grecaptcha.reset(recaptchaWidgetId.value);
+    recaptchaToken.value = "";
+  }
+}
+onMounted(() => {
+  const interval = setInterval(() => {
+    if (window.grecaptcha && window.grecaptcha.render) {
+      renderRecaptcha();
+      clearInterval(interval);
+    }
+  }, 100);
+
+  omBeforeUnmount(() => {
+    clearInterval(interval);
+  });
+});
 </script>
 
 <template>
