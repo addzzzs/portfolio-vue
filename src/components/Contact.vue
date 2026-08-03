@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeMount } from "vue";
 import { Notyf } from "notyf";
 
 const notyf = new Notyf();
@@ -104,7 +104,7 @@ onMounted(() => {
     }
   }, 100);
 
-  omBeforeUnmount(() => {
+  onBeforeUnmount(() => {
     clearInterval(interval);
   });
 });
