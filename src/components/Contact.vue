@@ -193,6 +193,10 @@ const submitForm = async () => {
                 {{ isLoading ? "Sending..." : "Send Message" }}
                 <i class="bi bi-send-fill"></i>
               </button>
+
+              <div class="d-flex justify-content-center mt-2">
+                <div ref="recaptchaContainer"></div>
+              </div>
             </div>
           </form>
         </div>
