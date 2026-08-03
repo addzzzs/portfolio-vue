@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <section class="hero-section container-max mx-auto" style="margin: 0 auto">
+  <section
+    class="hero-section container-max mx-auto"
+    id="hero"
+    style="margin: 0 auto"
+  >
     <div class="row align-items-center g-5">
       <div class="col-12 col-lg-7 order-2 order-md-1" style="z-index: 10">
         <span class="badge-outline mb-4">Full Stack Web Developer</span>

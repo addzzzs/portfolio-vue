@@ -37,10 +37,11 @@ defineProps({
         {{ tag }}
       </span>
     </div>
-    <button
+    <router-link
+      :to="`/project/${project.id}`"
       class="w-fit btn-lime px-stack-lg py-stack-sm bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold rounded hover:opacity-90 active:scale-95 transition-all"
     >
       View Project
-    </button>
+    </router-link>
   </div>
 </template>

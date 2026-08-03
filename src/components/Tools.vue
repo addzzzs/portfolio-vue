@@ -27,7 +27,9 @@ import techStack from "../data/techStack.json";
               <i class="bi bi-terminal text-lime"></i>
               Tech Stack
             </h3>
-            <div class="d-flex flex-wrap gap-3">
+            <div
+              class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start"
+            >
               <Tech
                 v-for="(tech, index) in techStack"
                 :tech="tech"

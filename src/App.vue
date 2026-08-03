@@ -9,14 +9,8 @@ import Tools from "./components/Tools.vue";
 
 <template>
   <NavBar />
-  <main>
-    <About />
 
-    <Projects />
-    <Tools />
-    <Contact />
-  </main>
-
+  <main><router-view /></main>
   <Footer />
 </template>
 
