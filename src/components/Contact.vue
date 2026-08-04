@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeMount } from "vue";
+import { ref, onMounted, onBeforeMount, onBeforeUnmount } from "vue";
 import { Notyf } from "notyf";
 
 const notyf = new Notyf();
