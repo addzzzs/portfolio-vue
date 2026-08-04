@@ -4,7 +4,7 @@ import techStack from "../data/techStack.json";
 </script>
 
 <template>
-  <section class="section-padded" id="tools">
+  <section class="section-padded container" id="tools">
     <div class="container-max mx-auto" style="margin: 0 auto">
       <div class="text-center mb-5" style="margin-bottom: 80px !important">
         <h2 class="headline-lg mb-2">Tools &amp; Stack</h2>

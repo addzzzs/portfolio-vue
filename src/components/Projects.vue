@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard.vue";
 
 <template>
   <section
-    class="bg-surface-container-lowest py-section-padding border-t border-outline-variant"
+    class="bg-surface-container-lowest py-section-padding border-t border-outline-variant container"
     id="projects"
   >
     <div class="container-fluid px-5 mx-auto px-margin-mobile md:px-gutter">
