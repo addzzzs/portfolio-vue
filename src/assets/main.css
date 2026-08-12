@@ -475,3 +475,12 @@ body {
     font-size: 32px;
   }
 }
+
+.recaptcha-wrapper {
+  max-width: 100%;
+}
+@media (max-width: 400px) {
+  .recaptcha-wrapper {
+    transform: scale(0.7);
+  }
+}

@@ -88,7 +88,7 @@ function renderRecaptcha() {
 
   recaptchaWidgetId.value = window.grecaptcha.render(recaptchaContainer.value, {
     sitekey: SITE_KEY,
-    size: "normal", // or 'compact'
+    size: window.innerWidth < 480 ? "compact" : "normal",
     callback: onRecaptchaSuccess,
     "expired-callback": onRecaptchaExpired,
   });
@@ -211,7 +211,7 @@ onMounted(() => {
             </div>
 
             <div class="d-flex justify-content-end">
-              <div ref="recaptchaContainer"></div>
+              <div ref="recaptchaContainer" class="recaptcha-wrapper"></div>
             </div>
             <div
               class="form-footer d-flex align-items-center justify-content-between flex-wrap gap-3"
@@ -236,7 +236,7 @@ onMounted(() => {
                   <i class="bi bi-facebook"></i>
                 </a>
                 <a
-                  href="https://github.com/YOUR-GITHUB"
+                  href="https://github.com/addzzzs"
                   id="github"
                   class="social-icon"
                   target="_blank"

@@ -49,7 +49,7 @@
             <i class="bi bi-facebook"></i>
           </a>
           <a
-            href="https://github.com/YOUR-GITHUB"
+            href="https://github.com/addzzzs"
             id="github"
             class="social-icon"
             target="_blank"
