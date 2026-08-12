@@ -8,7 +8,7 @@ import ProjectCard from "./ProjectCard.vue";
     class="bg-surface-container-lowest py-section-padding border-t border-outline-variant container"
     id="projects"
   >
-    <div class="container-fluid px-5 mx-auto px-margin-mobile md:px-gutter">
+    <div class="container-fluid px-2 mx-auto px-margin-mobile md:px-gutter">
       <div
         class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md mb-[64px]"
       >
